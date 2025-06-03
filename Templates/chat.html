@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-DealAI Contract Drafter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>I-DealAI Contract Drafter</h1>
+            <p>Your intelligent assistant for contract creation and interpretation.</p>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-box" id="chat-box">
+                {% for entry in history %}
+                    <div class="chat-message {{ entry.sender | lower }}">
+                        <strong>{{ entry.sender }}:</strong> {{ entry.message | safe }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <form method="post" class="message-form">
+                <textarea name="message_content" rows="2" placeholder="Type your message here..." required></textarea>
+                <button type="submit">Send</button>
+            </form>
+
+            <a href="{{ url_for('reset') }}" class="reset-chat">Reset Chat</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 I-DealAI Contract Drafter</p>
+        </footer>
+    </div>
+
+    <script>
+        // Scrolls to the bottom of the chat box when the page loads
+        window.onload = function () {
+            var chatBox = document.getElementById("chat-box");
+            chatBox.scrollTop = chatBox.scrollHeight;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Container and Layout */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #2d4059;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #4a536e;
+}
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    max-width: 75%;
+    font-size: 1rem;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.chat-message.user {
+    background-color: #2d4059;
+    color: #ffffff;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.chat-message.i-dealai {
+    background-color: #e4f1fe;
+    color: #34495e;
+    align-self: flex-start;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Message Form */
+.message-form {
+    display: flex;
+    gap: 10px;
+}
+
+.message-form textarea {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+}
+
+.message-form textarea:focus {
+    border-color: #2d4059;
+    outline: none;
+}
+
+.message-form button {
+    padding: 10px 20px;
+    background-color: #2d4059;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+    background-color: #1a2c3d;
+}
+
+/* Reset Chat Link */
+.reset-chat {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2d4059;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.reset-chat:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 20px;
+}
